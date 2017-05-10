@@ -1,0 +1,9 @@
+Debug
+Release
+*.VC.db
+*.suo
+test_package/build
+*.pyc
+conanbuildinfo.props
+conanbuildinfo.txt
+conaninfo.txt
