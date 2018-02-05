@@ -1,4 +1,4 @@
-from conans import ConanFile, tools
+from conans import ConanFile, MSBuild
 
 
 class ChatConan(ConanFile):
@@ -12,8 +12,8 @@ class ChatConan(ConanFile):
     generators = "visual_studio"
 
     def build(self):
-        cmd = tools.msvc_build_command(self.settings, "build/ChatLib/ChatLib.sln")
-        self.run(cmd)
+        msbuild = MSBuild(self)
+        msbuild.build("build/ChatLib/ChatLib.sln")
 
     def package(self):
         self.copy("*.h", dst="include", src="src")
